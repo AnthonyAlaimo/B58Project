@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.462
+TNS   : -356.497
+
+Type  : Slow 1200mV 85C Model Setup 'missile_r_sprite_control:m1|pointer[0]'
+Slack : -0.767
+TNS   : -4.188
+
+Type  : Slow 1200mV 85C Model Setup 'missile_l_sprite_control:m2|pointer[0]'
+Slack : -0.281
+TNS   : -0.406
+
+Type  : Slow 1200mV 85C Model Setup 'balloon_sprite_control:player|pointer[0]'
+Slack : -0.241
+TNS   : -0.804
+
+Type  : Slow 1200mV 85C Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 31.048
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'balloon_sprite_control:player|pointer[0]'
+Slack : -0.573
+TNS   : -2.157
+
+Type  : Slow 1200mV 85C Model Hold 'missile_r_sprite_control:m1|pointer[0]'
+Slack : -0.499
+TNS   : -0.646
+
+Type  : Slow 1200mV 85C Model Hold 'missile_l_sprite_control:m2|pointer[0]'
+Slack : -0.479
+TNS   : -3.298
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'missile_l_sprite_control:m2|pointer[0]'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'balloon_sprite_control:player|pointer[0]'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'missile_r_sprite_control:m1|pointer[0]'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.628
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 19.709
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.886
+TNS   : -319.764
+
+Type  : Slow 1200mV 0C Model Setup 'missile_r_sprite_control:m1|pointer[0]'
+Slack : -0.722
+TNS   : -3.808
+
+Type  : Slow 1200mV 0C Model Setup 'missile_l_sprite_control:m2|pointer[0]'
+Slack : -0.321
+TNS   : -0.519
+
+Type  : Slow 1200mV 0C Model Setup 'balloon_sprite_control:player|pointer[0]'
+Slack : -0.173
+TNS   : -0.596
+
+Type  : Slow 1200mV 0C Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 31.806
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'balloon_sprite_control:player|pointer[0]'
+Slack : -0.450
+TNS   : -1.630
+
+Type  : Slow 1200mV 0C Model Hold 'missile_r_sprite_control:m1|pointer[0]'
+Slack : -0.419
+TNS   : -0.472
+
+Type  : Slow 1200mV 0C Model Hold 'missile_l_sprite_control:m2|pointer[0]'
+Slack : -0.383
+TNS   : -2.576
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'missile_l_sprite_control:m2|pointer[0]'
+Slack : 0.314
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'missile_r_sprite_control:m1|pointer[0]'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'balloon_sprite_control:player|pointer[0]'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.647
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 19.709
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.748
+TNS   : -108.211
+
+Type  : Fast 1200mV 0C Model Setup 'missile_r_sprite_control:m1|pointer[0]'
+Slack : -0.145
+TNS   : -0.603
+
+Type  : Fast 1200mV 0C Model Setup 'missile_l_sprite_control:m2|pointer[0]'
+Slack : -0.040
+TNS   : -0.040
+
+Type  : Fast 1200mV 0C Model Setup 'balloon_sprite_control:player|pointer[0]'
+Slack : 0.085
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 35.408
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'balloon_sprite_control:player|pointer[0]'
+Slack : -0.084
+TNS   : -0.084
+
+Type  : Fast 1200mV 0C Model Hold 'missile_l_sprite_control:m2|pointer[0]'
+Slack : -0.039
+TNS   : -0.127
+
+Type  : Fast 1200mV 0C Model Hold 'missile_r_sprite_control:m1|pointer[0]'
+Slack : -0.025
+TNS   : -0.025
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'missile_l_sprite_control:m2|pointer[0]'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'missile_r_sprite_control:m1|pointer[0]'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'balloon_sprite_control:player|pointer[0]'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.372
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 19.754
+TNS   : 0.000
+
+------------------------------------------------------------

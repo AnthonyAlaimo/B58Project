@@ -1,0 +1,12 @@
+
+State Machine - |project|fsm:FSM|curState
+Name curState.ePlayer curState.gameOver curState.detectHits curState.dM2 curState.eM2 curState.dM1 curState.eM1 curState.dPlayer curState.idle 
+curState.idle 0 0 0 0 0 0 0 0 0 
+curState.dPlayer 0 0 0 0 0 0 0 1 1 
+curState.eM1 0 0 0 0 0 0 1 0 1 
+curState.dM1 0 0 0 0 0 1 0 0 1 
+curState.eM2 0 0 0 0 1 0 0 0 1 
+curState.dM2 0 0 0 1 0 0 0 0 1 
+curState.detectHits 0 0 1 0 0 0 0 0 1 
+curState.gameOver 0 1 0 0 0 0 0 0 1 
+curState.ePlayer 1 0 0 0 0 0 0 0 1 
