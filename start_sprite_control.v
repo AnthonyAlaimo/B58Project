@@ -19,7 +19,7 @@ module start_sprite_control(
     reg [7:0] x_pos;
     reg [6:0] y_pos;
     reg [11:0] sprite [0:15]; 
-    reg [7:0] pointer;
+    reg [3:0] pointer;
 
     initial begin
         x_pos = 8'd72;
@@ -41,21 +41,22 @@ module start_sprite_control(
         sprite[12] = 12'b111111111111;
         sprite[13] = 12'b111111111111;
         sprite[14] = 12'b111111111111;
+		  sprite[15] = 12'b111111111111;
     end
 
     always@(negedge clk) begin
 		  if (draw) begin
 			  if (clear) 
 					begin
-						 x_out = x_pos + pointer[3:0];
-						 y_out = y_pos + pointer[7:4];
+						 x_out = x_pos + pointer[1:0];
+						 y_out = y_pos + pointer[3:2];
 						 colour_out = 1'b0;
 						 pointer = pointer + 1'b1;
 					end
 			  else if (shift_h)
 					begin
-						 x_out = x_pos + shift_amount + pointer[3:0];
-						 y_out = y_pos + pointer[7:4];
+						 x_out = x_pos + shift_amount + pointer[1:0];
+						 y_out = y_pos + pointer[3:2];
 						 colour_out = sprite[pointer];
 						 pointer = pointer + 1'b1;
 						 if (pointer == 1'b0)
@@ -63,8 +64,8 @@ module start_sprite_control(
 					end
 			  else if (shift_v)
 					begin
-						 x_out = x_pos + pointer[3:0];
-						 y_out = y_pos + shift_amount + pointer[7:4];
+						 x_out = x_pos + pointer[1:0];
+						 y_out = y_pos + shift_amount + pointer[3:2];
 						 colour_out = sprite[pointer];
 						 pointer = pointer + 1'b1;
 						 if (pointer == 1'b0)

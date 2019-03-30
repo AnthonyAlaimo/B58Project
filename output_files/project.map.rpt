@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project
-Fri Mar 29 17:12:01 2019
+Fri Mar 29 19:59:49 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -21,7 +21,7 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  13. General Register Statistics
  14. Inverted Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated
+ 16. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated
  17. Parameter Settings for User Entity Instance: vga_adapter:VGA
  18. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
  19. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
@@ -36,11 +36,14 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  28. Port Connectivity Checks: "hex_display:h2"
  29. Port Connectivity Checks: "hex_display:h1"
  30. Port Connectivity Checks: "hex_display:h0"
- 31. Port Connectivity Checks: "fsm:FSM"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 31. Port Connectivity Checks: "start_sprite_control:s"
+ 32. Port Connectivity Checks: "balloon_i_sprite_control:d_player"
+ 33. Port Connectivity Checks: "vga_adapter:VGA"
+ 34. Port Connectivity Checks: "fsm:FSM"
+ 35. Post-Synthesis Netlist Statistics for Top Partition
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
+ 38. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -67,18 +70,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 29 17:12:01 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 29 19:59:49 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; project                                     ;
 ; Top-level Entity Name              ; project                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 843                                         ;
-;     Total combinational functions  ; 837                                         ;
-;     Dedicated logic registers      ; 205                                         ;
-; Total registers                    ; 205                                         ;
+; Total logic elements               ; 1,202                                       ;
+;     Total combinational functions  ; 1,185                                       ;
+;     Dedicated logic registers      ; 297                                         ;
+; Total registers                    ; 297                                         ;
 ; Total pins                         ; 87                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 460,800                                     ;
+; Total memory bits                  ; 230,400                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 1                                           ;
 +------------------------------------+---------------------------------------------+
@@ -182,42 +185,43 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
-+--------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                          ; Library ;
-+--------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
-; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_controller.v           ;         ;
-; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_address_translator.v   ;         ;
-; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v              ;         ;
-; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File             ; /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_pll.v                  ;         ;
-; missile_l_sprite_control.v           ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v             ;         ;
-; sprite_translator.v                  ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v                    ;         ;
-; rd.v                                 ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/rd.v                                   ;         ;
-; hex_display.v                        ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/hex_display.v                          ;         ;
-; fsm.v                                ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/fsm.v                                  ;         ;
-; balloon_sprite_control.v             ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v               ;         ;
-; missile_r_sprite_control.v           ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v             ;         ;
-; game_over_sprite_control.v           ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/Assignment/game_over_sprite_control.v             ;         ;
-; altsyncram.tdf                       ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                          ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                       ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal160.inc                       ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
-; a_rdenreg.inc                        ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                           ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                           ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                         ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_c3g1.tdf               ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/Assignment/db/altsyncram_c3g1.tdf                 ;         ;
-; black.mif                            ; yes             ; Auto-Found Memory Initialization File  ; /courses/courses/cscb58w19/wangda63/Assignment/black.mif                              ;         ;
-; db/decode_lsa.tdf                    ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/Assignment/db/decode_lsa.tdf                      ;         ;
-; db/decode_e8a.tdf                    ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/Assignment/db/decode_e8a.tdf                      ;         ;
-; db/mux_job.tdf                       ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/Assignment/db/mux_job.tdf                         ;         ;
-; altpll.tdf                           ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; stratix_pll.inc                      ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                    ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                    ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-+--------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++--------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                             ; Library ;
++--------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
+; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v            ;         ;
+; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_address_translator.v ;         ;
+; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_controller.v         ;         ;
+; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File             ; /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_pll.v                ;         ;
+; missile_l_sprite_control.v           ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v           ;         ;
+; missile_r_sprite_control.v           ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v           ;         ;
+; rd.v                                 ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/rd.v                                 ;         ;
+; sprite_translator.v                  ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v                  ;         ;
+; start_sprite_control.v               ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v               ;         ;
+; hex_display.v                        ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/hex_display.v                        ;         ;
+; fsm.v                                ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/fsm.v                                ;         ;
+; balloon_sprite_control.v             ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v             ;         ;
+; balloon_i_sprite_control.v           ; yes             ; User Verilog HDL File                  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v           ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
+; aglobal160.inc                       ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc           ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
+; altrom.inc                           ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc               ;         ;
+; altram.inc                           ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc               ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc             ;         ;
+; db/altsyncram_63g1.tdf               ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/FinalAssignment/db/altsyncram_63g1.tdf               ;         ;
+; black.mif                            ; yes             ; Auto-Found Memory Initialization File  ; /courses/courses/cscb58w19/wangda63/FinalAssignment/black.mif                            ;         ;
+; db/decode_lsa.tdf                    ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/FinalAssignment/db/decode_lsa.tdf                    ;         ;
+; db/decode_e8a.tdf                    ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/FinalAssignment/db/decode_e8a.tdf                    ;         ;
+; db/mux_gob.tdf                       ; yes             ; Auto-Generated Megafunction            ; /courses/courses/cscb58w19/wangda63/FinalAssignment/db/mux_gob.tdf                       ;         ;
+; altpll.tdf                           ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altpll.tdf               ;         ;
+; stratix_pll.inc                      ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_pll.inc          ;         ;
+; stratixii_pll.inc                    ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratixii_pll.inc        ;         ;
+; cycloneii_pll.inc                    ; yes             ; Megafunction                           ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/cycloneii_pll.inc        ;         ;
++--------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -225,24 +229,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 843            ;
+; Estimated Total logic elements              ; 1,202          ;
 ;                                             ;                ;
-; Total combinational functions               ; 837            ;
+; Total combinational functions               ; 1185           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 458            ;
-;     -- 3 input functions                    ; 216            ;
-;     -- <=2 input functions                  ; 163            ;
+;     -- 4 input functions                    ; 485            ;
+;     -- 3 input functions                    ; 478            ;
+;     -- <=2 input functions                  ; 222            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 711            ;
-;     -- arithmetic mode                      ; 126            ;
+;     -- normal mode                          ; 874            ;
+;     -- arithmetic mode                      ; 311            ;
 ;                                             ;                ;
-; Total registers                             ; 205            ;
-;     -- Dedicated logic registers            ; 205            ;
+; Total registers                             ; 297            ;
+;     -- Dedicated logic registers            ; 297            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 87             ;
-; Total memory bits                           ; 460800         ;
+; Total memory bits                           ; 230400         ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
@@ -250,9 +254,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 248            ;
-; Total fan-out                               ; 5683           ;
-; Average fan-out                             ; 4.41           ;
+; Maximum fan-out                             ; 305            ;
+; Total fan-out                               ; 5828           ;
+; Average fan-out                             ; 3.44           ;
 +---------------------------------------------+----------------+
 
 
@@ -261,22 +265,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name              ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |project                                                ; 837 (79)          ; 205 (0)      ; 460800      ; 0            ; 0       ; 0         ; 87   ; 0            ; |project                                                                                                ; project                  ; work         ;
-;    |balloon_sprite_control:player|                      ; 186 (186)         ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|balloon_sprite_control:player                                                                  ; balloon_sprite_control   ; work         ;
-;    |fsm:FSM|                                            ; 40 (40)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|fsm:FSM                                                                                        ; fsm                      ; work         ;
+; |project                                                ; 1185 (88)         ; 297 (1)      ; 230400      ; 0            ; 0       ; 0         ; 87   ; 0            ; |project                                                                                                ; project                  ; work         ;
+;    |balloon_i_sprite_control:d_player|                  ; 163 (163)         ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|balloon_i_sprite_control:d_player                                                              ; balloon_i_sprite_control ; work         ;
+;    |balloon_sprite_control:player|                      ; 189 (189)         ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|balloon_sprite_control:player                                                                  ; balloon_sprite_control   ; work         ;
+;    |fsm:FSM|                                            ; 224 (224)         ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|fsm:FSM                                                                                        ; fsm                      ; work         ;
 ;    |hex_display:h0|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|hex_display:h0                                                                                 ; hex_display              ; work         ;
 ;    |hex_display:h1|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|hex_display:h1                                                                                 ; hex_display              ; work         ;
 ;    |hex_display:h2|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|hex_display:h2                                                                                 ; hex_display              ; work         ;
-;    |hex_display:h4|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|hex_display:h4                                                                                 ; hex_display              ; work         ;
-;    |missile_l_sprite_control:m2|                        ; 163 (163)         ; 50 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|missile_l_sprite_control:m2                                                                    ; missile_l_sprite_control ; work         ;
-;    |missile_r_sprite_control:m1|                        ; 156 (156)         ; 50 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|missile_r_sprite_control:m1                                                                    ; missile_r_sprite_control ; work         ;
+;    |missile_l_sprite_control:m2|                        ; 143 (143)         ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|missile_l_sprite_control:m2                                                                    ; missile_l_sprite_control ; work         ;
+;    |missile_r_sprite_control:m1|                        ; 142 (142)         ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|missile_r_sprite_control:m1                                                                    ; missile_r_sprite_control ; work         ;
 ;    |rd:RateDivider|                                     ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|rd:RateDivider                                                                                 ; rd                       ; work         ;
-;    |vga_adapter:VGA|                                    ; 141 (3)           ; 30 (0)       ; 460800      ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA                                                                                ; vga_adapter              ; work         ;
-;       |altsyncram:VideoMemory|                          ; 54 (0)            ; 4 (0)        ; 460800      ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram               ; work         ;
-;          |altsyncram_c3g1:auto_generated|               ; 54 (0)            ; 4 (4)        ; 460800      ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated                          ; altsyncram_c3g1          ; work         ;
-;             |decode_e8a:rden_decode_b|                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|decode_e8a:rden_decode_b ; decode_e8a               ; work         ;
-;             |decode_lsa:decode2|                        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|decode_lsa:decode2       ; decode_lsa               ; work         ;
-;             |mux_job:mux3|                              ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|mux_job:mux3             ; mux_job                  ; work         ;
+;    |start_sprite_control:s|                             ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|start_sprite_control:s                                                                         ; start_sprite_control     ; work         ;
+;    |vga_adapter:VGA|                                    ; 119 (5)           ; 30 (0)       ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA                                                                                ; vga_adapter              ; work         ;
+;       |altsyncram:VideoMemory|                          ; 30 (0)            ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram               ; work         ;
+;          |altsyncram_63g1:auto_generated|               ; 30 (0)            ; 4 (4)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated                          ; altsyncram_63g1          ; work         ;
+;             |decode_e8a:rden_decode_b|                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|decode_e8a:rden_decode_b ; decode_e8a               ; work         ;
+;             |decode_lsa:decode2|                        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|decode_lsa:decode2       ; decode_lsa               ; work         ;
+;             |mux_gob:mux3|                              ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|mux_gob:mux3             ; mux_gob                  ; work         ;
 ;       |vga_address_translator:user_input_translator|    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|vga_address_translator:user_input_translator                                   ; vga_address_translator   ; work         ;
 ;       |vga_controller:controller|                       ; 66 (48)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|vga_controller:controller                                                      ; vga_controller           ; work         ;
 ;          |vga_address_translator:controller_translator| ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator         ; vga_address_translator   ; work         ;
@@ -291,26 +296,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------+
 ; Name                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF       ;
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------+
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 19200        ; 24           ; 19200        ; 24           ; 460800 ; black.mif ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 19200        ; 12           ; 19200        ; 12           ; 230400 ; black.mif ;
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------+
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |project|fsm:FSM|curState                                                                                                                                       ;
-+---------------------+------------------+-------------------+---------------------+--------------+--------------+--------------+--------------+------------------+---------------+
-; Name                ; curState.ePlayer ; curState.gameOver ; curState.detectHits ; curState.dM2 ; curState.eM2 ; curState.dM1 ; curState.eM1 ; curState.dPlayer ; curState.idle ;
-+---------------------+------------------+-------------------+---------------------+--------------+--------------+--------------+--------------+------------------+---------------+
-; curState.idle       ; 0                ; 0                 ; 0                   ; 0            ; 0            ; 0            ; 0            ; 0                ; 0             ;
-; curState.dPlayer    ; 0                ; 0                 ; 0                   ; 0            ; 0            ; 0            ; 0            ; 1                ; 1             ;
-; curState.eM1        ; 0                ; 0                 ; 0                   ; 0            ; 0            ; 0            ; 1            ; 0                ; 1             ;
-; curState.dM1        ; 0                ; 0                 ; 0                   ; 0            ; 0            ; 1            ; 0            ; 0                ; 1             ;
-; curState.eM2        ; 0                ; 0                 ; 0                   ; 0            ; 1            ; 0            ; 0            ; 0                ; 1             ;
-; curState.dM2        ; 0                ; 0                 ; 0                   ; 1            ; 0            ; 0            ; 0            ; 0                ; 1             ;
-; curState.detectHits ; 0                ; 0                 ; 1                   ; 0            ; 0            ; 0            ; 0            ; 0                ; 1             ;
-; curState.gameOver   ; 0                ; 1                 ; 0                   ; 0            ; 0            ; 0            ; 0            ; 0                ; 1             ;
-; curState.ePlayer    ; 1                ; 0                 ; 0                   ; 0            ; 0            ; 0            ; 0            ; 0                ; 1             ;
-+---------------------+------------------+-------------------+---------------------+--------------+--------------+--------------+--------------+------------------+---------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |project|fsm:FSM|curState                                                                                                                                                                                                                                                         ;
++----------------------+---------------+--------------------+-----------------+------------------+----------------+------------------+---------------+---------------------+----------------------+--------------+--------------+--------------+--------------+------------------+------------------+
+; Name                 ; curState.dead ; curState.load_dead ; curState.eStart ; curState.load_m1 ; curState.start ; curState.load_m2 ; curState.idle ; curState.detectHits ; curState.load_player ; curState.dM2 ; curState.eM2 ; curState.dM1 ; curState.eM1 ; curState.dPlayer ; curState.ePlayer ;
++----------------------+---------------+--------------------+-----------------+------------------+----------------+------------------+---------------+---------------------+----------------------+--------------+--------------+--------------+--------------+------------------+------------------+
+; curState.ePlayer     ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 0                ;
+; curState.dPlayer     ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1                ; 1                ;
+; curState.eM1         ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 1            ; 0                ; 1                ;
+; curState.dM1         ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 1            ; 0            ; 0                ; 1                ;
+; curState.eM2         ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 1            ; 0            ; 0            ; 0                ; 1                ;
+; curState.dM2         ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 1            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.load_player ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 1                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.detectHits  ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 1                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.idle        ; 0             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 1             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.load_m2     ; 0             ; 0                  ; 0               ; 0                ; 0              ; 1                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.start       ; 0             ; 0                  ; 0               ; 0                ; 1              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.load_m1     ; 0             ; 0                  ; 0               ; 1                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.eStart      ; 0             ; 0                  ; 1               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.load_dead   ; 0             ; 1                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
+; curState.dead        ; 1             ; 0                  ; 0               ; 0                ; 0              ; 0                ; 0             ; 0                   ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0                ; 1                ;
++----------------------+---------------+--------------------+-----------------+------------------+----------------+------------------+---------------+---------------------+----------------------+--------------+--------------+--------------+--------------+------------------+------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -318,108 +329,92 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+--------------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal                  ; Free of Timing Hazards ;
 +-----------------------------------------------------+--------------------------------------+------------------------+
-; missile_r_sprite_control:m1|posx[4]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
-; missile_r_sprite_control:m1|posx[5]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
-; missile_r_sprite_control:m1|posx[6]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; balloon_sprite_control:player|posx[0]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; missile_r_sprite_control:m1|posx[7]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; missile_r_sprite_control:m1|posx[6]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; missile_r_sprite_control:m1|posx[5]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; missile_r_sprite_control:m1|posx[4]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; balloon_sprite_control:player|posx[7]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; balloon_sprite_control:player|posx[6]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; balloon_sprite_control:player|posx[5]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; balloon_sprite_control:player|posx[4]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; missile_r_sprite_control:m1|posx[3]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; balloon_sprite_control:player|posx[3]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; missile_r_sprite_control:m1|posx[2]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; balloon_sprite_control:player|posx[2]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; missile_r_sprite_control:m1|posx[1]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; balloon_sprite_control:player|posx[1]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; missile_r_sprite_control:m1|posx[0]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
-; balloon_sprite_control:player|posy[5]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; balloon_sprite_control:player|posy[6]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
 ; balloon_sprite_control:player|posy[4]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; balloon_sprite_control:player|posy[5]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; missile_r_sprite_control:m1|posy[6]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; missile_r_sprite_control:m1|posy[5]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
+; missile_r_sprite_control:m1|posy[4]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
 ; balloon_sprite_control:player|posy[3]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; missile_r_sprite_control:m1|posy[3]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
 ; balloon_sprite_control:player|posy[2]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; missile_r_sprite_control:m1|posy[2]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
 ; balloon_sprite_control:player|posy[1]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
+; missile_r_sprite_control:m1|posy[1]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
 ; balloon_sprite_control:player|posy[0]               ; balloon_sprite_control:player|Equal1 ; yes                    ;
-; missile_l_sprite_control:m2|posx[4]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
-; missile_l_sprite_control:m2|posx[5]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
-; missile_l_sprite_control:m2|posx[6]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_r_sprite_control:m1|posy[0]                 ; missile_r_sprite_control:m1|Equal1   ; yes                    ;
 ; missile_l_sprite_control:m2|posx[7]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posx[6]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posx[5]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posx[4]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
 ; missile_l_sprite_control:m2|posx[3]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
 ; missile_l_sprite_control:m2|posx[2]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
 ; missile_l_sprite_control:m2|posx[1]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
 ; missile_l_sprite_control:m2|posx[0]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
-; Number of user-specified and inferred latches = 23  ;                                      ;                        ;
+; missile_l_sprite_control:m2|posy[6]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posy[5]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posy[4]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posy[3]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posy[2]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posy[1]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; missile_l_sprite_control:m2|posy[0]                 ; missile_l_sprite_control:m2|Equal1   ; yes                    ;
+; blow                                                ; GND                                  ; yes                    ;
+; Number of user-specified and inferred latches = 46  ;                                      ;                        ;
 +-----------------------------------------------------+--------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                              ;
-+------------------------------------------------------+----------------------------------------------------------+
-; Register name                                        ; Reason for Removal                                       ;
-+------------------------------------------------------+----------------------------------------------------------+
-; game_over_sprite_control:go_screen|y_pos[0..6]       ; Stuck at GND due to stuck port clock_enable              ;
-; game_over_sprite_control:go_screen|x_pos[0..7]       ; Stuck at GND due to stuck port clock_enable              ;
-; game_over_sprite_control:go_screen|pointer[0..14]    ; Stuck at GND due to stuck port clock_enable              ;
-; game_over_sprite_control:go_screen|colour_out[0..23] ; Stuck at GND due to stuck port clock_enable              ;
-; game_over_sprite_control:go_screen|y_out[0..6]       ; Stuck at GND due to stuck port clock_enable              ;
-; game_over_sprite_control:go_screen|x_out[0..7]       ; Stuck at GND due to stuck port clock_enable              ;
-; fsm:FSM|shift_amount[2..6]                           ; Merged with fsm:FSM|shift_amount[1]                      ;
-; balloon_sprite_control:player|colour_out[0]          ; Stuck at GND due to stuck port data_in                   ;
-; balloon_sprite_control:player|x_pos[7]               ; Stuck at GND due to stuck port clock_enable              ;
-; balloon_sprite_control:player|x_pos[6]               ; Stuck at VCC due to stuck port clock_enable              ;
-; balloon_sprite_control:player|x_pos[5]               ; Stuck at GND due to stuck port clock_enable              ;
-; balloon_sprite_control:player|x_pos[4]               ; Stuck at VCC due to stuck port clock_enable              ;
-; balloon_sprite_control:player|x_pos[0..3]            ; Stuck at GND due to stuck port clock_enable              ;
-; missile_l_sprite_control:m2|y_pos[5,6]               ; Stuck at VCC due to stuck port clock_enable              ;
-; missile_l_sprite_control:m2|y_pos[3,4]               ; Stuck at GND due to stuck port clock_enable              ;
-; missile_l_sprite_control:m2|y_pos[2]                 ; Stuck at VCC due to stuck port clock_enable              ;
-; missile_l_sprite_control:m2|y_pos[0,1]               ; Stuck at GND due to stuck port clock_enable              ;
-; missile_r_sprite_control:m1|y_pos[5,6]               ; Stuck at GND due to stuck port clock_enable              ;
-; missile_r_sprite_control:m1|y_pos[4]                 ; Stuck at VCC due to stuck port clock_enable              ;
-; missile_r_sprite_control:m1|y_pos[3]                 ; Stuck at GND due to stuck port clock_enable              ;
-; missile_r_sprite_control:m1|y_pos[2]                 ; Stuck at VCC due to stuck port clock_enable              ;
-; missile_r_sprite_control:m1|y_pos[0,1]               ; Stuck at GND due to stuck port clock_enable              ;
-; fsm:FSM|curState~2                                   ; Lost fanout                                              ;
-; fsm:FSM|curState~3                                   ; Lost fanout                                              ;
-; fsm:FSM|curState~4                                   ; Lost fanout                                              ;
-; fsm:FSM|curState~5                                   ; Lost fanout                                              ;
-; balloon_sprite_control:player|colour_out[21]         ; Merged with balloon_sprite_control:player|colour_out[19] ;
-; balloon_sprite_control:player|colour_out[1,3,7,9,13] ; Merged with balloon_sprite_control:player|colour_out[12] ;
-; balloon_sprite_control:player|colour_out[15]         ; Merged with balloon_sprite_control:player|colour_out[11] ;
-; balloon_sprite_control:player|colour_out[5,6]        ; Merged with balloon_sprite_control:player|colour_out[4]  ;
-; missile_r_sprite_control:m1|y_out[4]                 ; Stuck at VCC due to stuck port data_in                   ;
-; missile_l_sprite_control:m2|y_out[4]                 ; Stuck at GND due to stuck port data_in                   ;
-; missile_l_sprite_control:m2|y_out[5]                 ; Stuck at VCC due to stuck port data_in                   ;
-; missile_r_sprite_control:m1|y_out[5,6]               ; Stuck at GND due to stuck port data_in                   ;
-; missile_l_sprite_control:m2|y_out[6]                 ; Stuck at VCC due to stuck port data_in                   ;
-; Total Number of Removed Registers = 116              ;                                                          ;
-+------------------------------------------------------+----------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++----------------------------------------------------+-------------------------------------------------------------+
+; Register name                                      ; Reason for Removal                                          ;
++----------------------------------------------------+-------------------------------------------------------------+
+; fsm:FSM|shift_amount[2..6]                         ; Merged with fsm:FSM|shift_amount[1]                         ;
+; start_sprite_control:s|y_pos[6]                    ; Stuck at GND due to stuck port clock_enable                 ;
+; start_sprite_control:s|y_pos[4,5]                  ; Stuck at VCC due to stuck port clock_enable                 ;
+; start_sprite_control:s|y_pos[3]                    ; Stuck at GND due to stuck port clock_enable                 ;
+; start_sprite_control:s|y_pos[2]                    ; Stuck at VCC due to stuck port clock_enable                 ;
+; start_sprite_control:s|y_pos[0,1]                  ; Stuck at GND due to stuck port clock_enable                 ;
+; start_sprite_control:s|colour_out[0..7,9..11]      ; Merged with start_sprite_control:s|colour_out[8]            ;
+; balloon_i_sprite_control:d_player|colour_out[9,10] ; Merged with balloon_i_sprite_control:d_player|colour_out[8] ;
+; balloon_i_sprite_control:d_player|colour_out[1,2]  ; Merged with balloon_i_sprite_control:d_player|colour_out[0] ;
+; fsm:FSM|curState~2                                 ; Lost fanout                                                 ;
+; fsm:FSM|curState~3                                 ; Lost fanout                                                 ;
+; fsm:FSM|curState~4                                 ; Lost fanout                                                 ;
+; fsm:FSM|curState~5                                 ; Lost fanout                                                 ;
+; fsm:FSM|curState~6                                 ; Lost fanout                                                 ;
+; balloon_sprite_control:player|colour_out[8,9]      ; Merged with balloon_sprite_control:player|colour_out[10]    ;
+; balloon_sprite_control:player|colour_out[1,2]      ; Merged with balloon_sprite_control:player|colour_out[0]     ;
+; start_sprite_control:s|y_out[4,5]                  ; Stuck at VCC due to stuck port data_in                      ;
+; start_sprite_control:s|y_out[6]                    ; Stuck at GND due to stuck port data_in                      ;
+; Total Number of Removed Registers = 39             ;                                                             ;
++----------------------------------------------------+-------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                  ;
-+-----------------------------------------------+--------------------------------+-----------------------------------------------------------------------------+
-; Register name                                 ; Reason for Removal             ; Registers Removed due to This Register                                      ;
-+-----------------------------------------------+--------------------------------+-----------------------------------------------------------------------------+
-; game_over_sprite_control:go_screen|y_pos[4]   ; Stuck at GND                   ; game_over_sprite_control:go_screen|y_out[0],                                ;
-;                                               ; due to stuck port clock_enable ; game_over_sprite_control:go_screen|y_out[1],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|y_out[2],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|y_out[3],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|y_out[4],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|y_out[5],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|y_out[6]                                 ;
-; game_over_sprite_control:go_screen|pointer[0] ; Stuck at GND                   ; game_over_sprite_control:go_screen|colour_out[0],                           ;
-;                                               ; due to stuck port clock_enable ; game_over_sprite_control:go_screen|colour_out[1],                           ;
-;                                               ;                                ; game_over_sprite_control:go_screen|colour_out[2],                           ;
-;                                               ;                                ; game_over_sprite_control:go_screen|colour_out[3],                           ;
-;                                               ;                                ; game_over_sprite_control:go_screen|colour_out[4],                           ;
-;                                               ;                                ; game_over_sprite_control:go_screen|colour_out[5],                           ;
-;                                               ;                                ; game_over_sprite_control:go_screen|x_out[1]                                 ;
-; game_over_sprite_control:go_screen|x_pos[0]   ; Stuck at GND                   ; game_over_sprite_control:go_screen|x_out[2],                                ;
-;                                               ; due to stuck port clock_enable ; game_over_sprite_control:go_screen|x_out[3],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|x_out[4],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|x_out[5],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|x_out[6],                                ;
-;                                               ;                                ; game_over_sprite_control:go_screen|x_out[7]                                 ;
-; missile_l_sprite_control:m2|y_pos[6]          ; Stuck at VCC                   ; missile_l_sprite_control:m2|y_out[4], missile_l_sprite_control:m2|y_out[5], ;
-;                                               ; due to stuck port clock_enable ; missile_l_sprite_control:m2|y_out[6]                                        ;
-; missile_r_sprite_control:m1|y_pos[6]          ; Stuck at GND                   ; missile_r_sprite_control:m1|y_out[4], missile_r_sprite_control:m1|y_out[5], ;
-;                                               ; due to stuck port clock_enable ; missile_r_sprite_control:m1|y_out[6]                                        ;
-+-----------------------------------------------+--------------------------------+-----------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                          ;
++---------------------------------+--------------------------------+-------------------------------------------------------------------+
+; Register name                   ; Reason for Removal             ; Registers Removed due to This Register                            ;
++---------------------------------+--------------------------------+-------------------------------------------------------------------+
+; start_sprite_control:s|y_pos[6] ; Stuck at GND                   ; start_sprite_control:s|y_out[4], start_sprite_control:s|y_out[5], ;
+;                                 ; due to stuck port clock_enable ; start_sprite_control:s|y_out[6]                                   ;
++---------------------------------+--------------------------------+-------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -427,59 +422,97 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 205   ;
-; Number of registers using Synchronous Clear  ; 4     ;
+; Total registers                              ; 297   ;
+; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 144   ;
+; Number of registers using Clock Enable       ; 212   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; rd:RateDivider|Q[17]                    ; 2       ;
-; rd:RateDivider|Q[18]                    ; 2       ;
-; rd:RateDivider|Q[1]                     ; 2       ;
-; rd:RateDivider|Q[3]                     ; 2       ;
-; rd:RateDivider|Q[4]                     ; 2       ;
-; rd:RateDivider|Q[7]                     ; 2       ;
-; rd:RateDivider|Q[8]                     ; 2       ;
-; rd:RateDivider|Q[9]                     ; 2       ;
-; rd:RateDivider|Q[11]                    ; 2       ;
-; rd:RateDivider|Q[12]                    ; 2       ;
-; rd:RateDivider|Q[14]                    ; 2       ;
-; balloon_sprite_control:player|y_pos[5]  ; 3       ;
-; balloon_sprite_control:player|y_pos[2]  ; 3       ;
-; balloon_sprite_control:player|y_pos[3]  ; 3       ;
-; balloon_sprite_control:player|y_pos[4]  ; 3       ;
-; missile_l_sprite_control:m2|x_pos[7]    ; 3       ;
-; missile_l_sprite_control:m2|x_pos[5]    ; 3       ;
-; Total number of inverted registers = 17 ;         ;
-+-----------------------------------------+---------+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; fsm:FSM|resetting                          ; 10      ;
+; balloon_sprite_control:player|y_pos[4]     ; 3       ;
+; balloon_sprite_control:player|y_pos[5]     ; 3       ;
+; missile_r_sprite_control:m1|y_pos[4]       ; 3       ;
+; balloon_sprite_control:player|y_pos[2]     ; 3       ;
+; missile_r_sprite_control:m1|y_pos[2]       ; 3       ;
+; missile_l_sprite_control:m2|y_pos[6]       ; 3       ;
+; missile_l_sprite_control:m2|y_pos[5]       ; 3       ;
+; missile_l_sprite_control:m2|y_pos[2]       ; 3       ;
+; balloon_sprite_control:player|x_pos[6]     ; 3       ;
+; missile_l_sprite_control:m2|x_pos[7]       ; 3       ;
+; missile_l_sprite_control:m2|x_pos[5]       ; 3       ;
+; missile_l_sprite_control:m2|x_pos[4]       ; 3       ;
+; balloon_sprite_control:player|x_pos[3]     ; 3       ;
+; missile_l_sprite_control:m2|x_pos[2]       ; 3       ;
+; rd:RateDivider|Q[17]                       ; 2       ;
+; rd:RateDivider|Q[18]                       ; 2       ;
+; rd:RateDivider|Q[1]                        ; 2       ;
+; rd:RateDivider|Q[3]                        ; 2       ;
+; rd:RateDivider|Q[4]                        ; 2       ;
+; rd:RateDivider|Q[7]                        ; 2       ;
+; rd:RateDivider|Q[8]                        ; 2       ;
+; rd:RateDivider|Q[9]                        ; 2       ;
+; rd:RateDivider|Q[11]                       ; 2       ;
+; rd:RateDivider|Q[12]                       ; 2       ;
+; rd:RateDivider|Q[14]                       ; 2       ;
+; balloon_i_sprite_control:d_player|y_pos[5] ; 2       ;
+; balloon_i_sprite_control:d_player|y_pos[4] ; 2       ;
+; balloon_i_sprite_control:d_player|y_pos[3] ; 2       ;
+; balloon_i_sprite_control:d_player|y_pos[2] ; 2       ;
+; start_sprite_control:s|x_pos[6]            ; 2       ;
+; start_sprite_control:s|x_pos[3]            ; 2       ;
+; balloon_i_sprite_control:d_player|x_pos[6] ; 2       ;
+; balloon_i_sprite_control:d_player|x_pos[4] ; 2       ;
+; Total number of inverted registers = 34    ;         ;
++--------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 45 bits   ; 90 LEs        ; 0 LEs                ; 90 LEs                 ; Yes        ; |project|missile_l_sprite_control:m2|y_out[5]                                                               ;
-; 3:1                ; 71 bits   ; 142 LEs       ; 71 LEs               ; 71 LEs                 ; Yes        ; |project|balloon_sprite_control:player|colour_out[17]                                                       ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |project|vga_adapter:VGA|vga_controller:controller|yCounter[4]                                              ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|mux_job:mux3|result_node[17] ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; No         ; |project|missile_l_sprite_control:m2|Add1                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |project|balloon_sprite_control:player|Add2                                                                 ;
-; 4:1                ; 38 bits   ; 76 LEs        ; 76 LEs               ; 0 LEs                  ; No         ; |project|colour[14]                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 75 bits   ; 150 LEs       ; 0 LEs                ; 150 LEs                ; Yes        ; |project|balloon_sprite_control:player|x_out[2]                                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |project|balloon_sprite_control:player|y_pos[6]                                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |project|missile_l_sprite_control:m2|y_pos[1]                                                              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|missile_r_sprite_control:m1|y_pos[0]                                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |project|start_sprite_control:s|y_pos[0]                                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |project|balloon_i_sprite_control:d_player|y_pos[1]                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |project|fsm:FSM|load_y[4]                                                                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |project|missile_l_sprite_control:m2|x_pos[6]                                                              ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |project|balloon_sprite_control:player|x_pos[2]                                                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |project|missile_r_sprite_control:m1|x_pos[5]                                                              ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |project|start_sprite_control:s|x_pos[1]                                                                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |project|balloon_i_sprite_control:d_player|x_pos[1]                                                        ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |project|start_sprite_control:s|colour_out[10]                                                             ;
+; 3:1                ; 48 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |project|balloon_sprite_control:player|colour_out[4]                                                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |project|vga_adapter:VGA|vga_controller:controller|yCounter[0]                                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |project|balloon_sprite_control:player|y_pos[2]                                                            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |project|missile_l_sprite_control:m2|y_pos[2]                                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |project|missile_r_sprite_control:m1|y_pos[2]                                                              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |project|start_sprite_control:s|y_pos[4]                                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |project|balloon_i_sprite_control:d_player|y_pos[5]                                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |project|missile_l_sprite_control:m2|x_pos[2]                                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |project|balloon_sprite_control:player|x_pos[6]                                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |project|start_sprite_control:s|x_pos[6]                                                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |project|balloon_i_sprite_control:d_player|x_pos[6]                                                        ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|mux_gob:mux3|result_node[9] ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |project|missile_r_sprite_control:m1|Add1                                                                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |project|balloon_sprite_control:player|Add2                                                                ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 81 LEs               ; 0 LEs                  ; No         ; |project|colour[4]                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
-; Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated ;
+; Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------+
 ; Assignment                      ; Value              ; From ; To                             ;
 +---------------------------------+--------------------+------+--------------------------------+
@@ -492,7 +525,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------+-----------+------------------------+
 ; Parameter Name          ; Value     ; Type                   ;
 +-------------------------+-----------+------------------------+
-; BITS_PER_COLOUR_CHANNEL ; 8         ; Signed Integer         ;
+; BITS_PER_COLOUR_CHANNEL ; 4         ; Signed Integer         ;
 ; MONOCHROME              ; FALSE     ; String                 ;
 ; RESOLUTION              ; 160x120   ; String                 ;
 ; BACKGROUND_IMAGE        ; black.mif ; String                 ;
@@ -522,7 +555,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE          ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                 ;
 ; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                 ;
-; WIDTH_A                            ; 24                   ; Signed Integer          ;
+; WIDTH_A                            ; 12                   ; Signed Integer          ;
 ; WIDTHAD_A                          ; 15                   ; Signed Integer          ;
 ; NUMWORDS_A                         ; 19200                ; Signed Integer          ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                 ;
@@ -531,7 +564,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                 ;
 ; INDATA_ACLR_A                      ; NONE                 ; Untyped                 ;
 ; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                 ;
-; WIDTH_B                            ; 24                   ; Signed Integer          ;
+; WIDTH_B                            ; 12                   ; Signed Integer          ;
 ; WIDTHAD_B                          ; 15                   ; Signed Integer          ;
 ; NUMWORDS_B                         ; 19200                ; Signed Integer          ;
 ; INDATA_REG_B                       ; CLOCK1               ; Untyped                 ;
@@ -566,7 +599,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                 ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                 ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                 ;
-; CBXI_PARAMETER                     ; altsyncram_c3g1      ; Untyped                 ;
+; CBXI_PARAMETER                     ; altsyncram_63g1      ; Untyped                 ;
 +------------------------------------+----------------------+-------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -950,7 +983,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+------------+-------------------------------------------------+
 ; Parameter Name          ; Value      ; Type                                            ;
 +-------------------------+------------+-------------------------------------------------+
-; BITS_PER_COLOUR_CHANNEL ; 8          ; Signed Integer                                  ;
+; BITS_PER_COLOUR_CHANNEL ; 4          ; Signed Integer                                  ;
 ; MONOCHROME              ; FALSE      ; String                                          ;
 ; RESOLUTION              ; 160x120    ; String                                          ;
 ; C_VERT_NUM_PIXELS       ; 0111100000 ; Unsigned Binary                                 ;
@@ -983,10 +1016,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances                ; 1                                      ;
 ; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                              ;
-;     -- WIDTH_A                            ; 24                                     ;
+;     -- WIDTH_A                            ; 12                                     ;
 ;     -- NUMWORDS_A                         ; 19200                                  ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
-;     -- WIDTH_B                            ; 24                                     ;
+;     -- WIDTH_B                            ; 12                                     ;
 ;     -- NUMWORDS_B                         ; 19200                                  ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                 ;
 ;     -- OUTDATA_REG_B                      ; CLOCK1                                 ;
@@ -1022,13 +1055,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hex_display:h4"                                                                                                        ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
-; OUT  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "OUT[7..7]" have no fanouts ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_display:h4"                                                                                                                            ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                    ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; IN   ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "IN[3..1]" will be connected to GND. ;
+; OUT  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "OUT[7..7]" have no fanouts                     ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1068,13 +1102,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fsm:FSM"                                                                                                    ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                  ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; draw_go ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "start_sprite_control:s"                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; posx ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; posy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "balloon_i_sprite_control:d_player"                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; complete ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; posx     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; posy     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "vga_adapter:VGA" ;
++--------+-------+----------+-----------------+
+; Port   ; Type  ; Severity ; Details         ;
++--------+-------+----------+-----------------+
+; resetn ; Input ; Info     ; Stuck at VCC    ;
++--------+-------+----------+-----------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "fsm:FSM"            ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; continueDraw ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
@@ -1083,26 +1147,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 87                          ;
-; cycloneiii_ff         ; 205                         ;
-;     CLR               ; 20                          ;
-;     ENA               ; 144                         ;
-;     SCLR              ; 4                           ;
-;     plain             ; 37                          ;
-; cycloneiii_lcell_comb ; 846                         ;
-;     arith             ; 126                         ;
-;         2 data inputs ; 59                          ;
-;         3 data inputs ; 67                          ;
-;     normal            ; 720                         ;
-;         0 data inputs ; 7                           ;
-;         1 data inputs ; 34                          ;
-;         2 data inputs ; 72                          ;
-;         3 data inputs ; 149                         ;
-;         4 data inputs ; 458                         ;
+; cycloneiii_ff         ; 297                         ;
+;     ENA               ; 212                         ;
+;     SCLR              ; 6                           ;
+;     plain             ; 79                          ;
+; cycloneiii_lcell_comb ; 1190                        ;
+;     arith             ; 311                         ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 232                         ;
+;     normal            ; 879                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 41                          ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 246                         ;
+;         4 data inputs ; 485                         ;
 ; cycloneiii_pll        ; 1                           ;
-; cycloneiii_ram_block  ; 72                          ;
+; cycloneiii_ram_block  ; 36                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.70                        ;
-; Average LUT depth     ; 3.63                        ;
+; Max LUT depth         ; 9.70                        ;
+; Average LUT depth     ; 4.22                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1121,53 +1184,52 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Fri Mar 29 17:11:49 2019
+    Info: Processing started: Fri Mar 29 19:59:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_controller.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
+    Info (12023): Found entity 1: vga_address_translator File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_address_translator.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_pll.v Line: 36
-Info (12021): Found 1 design units, including 1 entities, in source file rand8bit.v
-    Info (12023): Found entity 1: rand8bit File: /courses/courses/cscb58w19/wangda63/Assignment/rand8bit.v Line: 7
+    Info (12023): Found entity 1: vga_pll File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_pll.v Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file missile_l_sprite_control.v
-    Info (12023): Found entity 1: missile_l_sprite_control File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at sprite_translator.v(123): ignored dangling comma in List of Port Connections File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 123
-Info (12021): Found 1 design units, including 1 entities, in source file sprite_translator.v
-    Info (12023): Found entity 1: project File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mover.v
-    Info (12023): Found entity 1: mover File: /courses/courses/cscb58w19/wangda63/Assignment/mover.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file rd.v
-    Info (12023): Found entity 1: rd File: /courses/courses/cscb58w19/wangda63/Assignment/rd.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file hex_display.v
-    Info (12023): Found entity 1: hex_display File: /courses/courses/cscb58w19/wangda63/Assignment/hex_display.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file part2.v
-    Info (12023): Found entity 1: part2 File: /courses/courses/cscb58w19/wangda63/Assignment/part2.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
-    Info (12023): Found entity 1: fsm File: /courses/courses/cscb58w19/wangda63/Assignment/fsm.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file balloon_sprite_control.v
-    Info (12023): Found entity 1: balloon_sprite_control File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 1
+    Info (12023): Found entity 1: missile_l_sprite_control File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file missile_r_sprite_control.v
-    Info (12023): Found entity 1: missile_r_sprite_control File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file game_over_sprite_control.v
-    Info (12023): Found entity 1: game_over_sprite_control File: /courses/courses/cscb58w19/wangda63/Assignment/game_over_sprite_control.v Line: 1
+    Info (12023): Found entity 1: missile_r_sprite_control File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rand8bit.v
+    Info (12023): Found entity 1: rand8bit File: /courses/courses/cscb58w19/wangda63/FinalAssignment/rand8bit.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file rd.v
+    Info (12023): Found entity 1: rd File: /courses/courses/cscb58w19/wangda63/FinalAssignment/rd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sprite_translator.v
+    Info (12023): Found entity 1: project File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file start_sprite_control.v
+    Info (12023): Found entity 1: start_sprite_control File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hex_display.v
+    Info (12023): Found entity 1: hex_display File: /courses/courses/cscb58w19/wangda63/FinalAssignment/hex_display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
+    Info (12023): Found entity 1: fsm File: /courses/courses/cscb58w19/wangda63/FinalAssignment/fsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file balloon_sprite_control.v
+    Info (12023): Found entity 1: balloon_sprite_control File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file balloon_i_sprite_control.v
+    Info (12023): Found entity 1: balloon_i_sprite_control File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 1
 Info (12127): Elaborating entity "project" for the top level hierarchy
-Info (12128): Elaborating entity "rd" for hierarchy "rd:RateDivider" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 95
-Info (12128): Elaborating entity "fsm" for hierarchy "fsm:FSM" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 123
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(31): object "velocity" assigned a value but never read File: /courses/courses/cscb58w19/wangda63/Assignment/fsm.v Line: 31
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(32): object "hit" assigned a value but never read File: /courses/courses/cscb58w19/wangda63/Assignment/fsm.v Line: 32
-Info (10264): Verilog HDL Case Statement information at fsm.v(136): all case item expressions in this case statement are onehot File: /courses/courses/cscb58w19/wangda63/Assignment/fsm.v Line: 136
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 141
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 213
-    Info (12134): Parameter "WIDTH_A" = "24"
-    Info (12134): Parameter "WIDTH_B" = "24"
+Warning (10855): Verilog HDL warning at sprite_translator.v(25): initial value for variable blow_toggle should be constant File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at sprite_translator.v(32): inferring latch(es) for variable "blow", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 32
+Info (10041): Inferred latch for "blow" at sprite_translator.v(32) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 32
+Info (12128): Elaborating entity "rd" for hierarchy "rd:RateDivider" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 121
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:FSM" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 153
+Warning (10036): Verilog HDL or VHDL warning at fsm.v(34): object "velocity" assigned a value but never read File: /courses/courses/cscb58w19/wangda63/FinalAssignment/fsm.v Line: 34
+Info (10264): Verilog HDL Case Statement information at fsm.v(166): all case item expressions in this case statement are onehot File: /courses/courses/cscb58w19/wangda63/FinalAssignment/fsm.v Line: 166
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 171
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 213
+    Info (12134): Parameter "WIDTH_A" = "12"
+    Info (12134): Parameter "WIDTH_B" = "12"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
     Info (12134): Parameter "WIDTHAD_A" = "15"
@@ -1181,22 +1243,22 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "CLOCK_ENABLE_OUTPUT_B" = "BYPASS"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c3g1.tdf
-    Info (12023): Found entity 1: altsyncram_c3g1 File: /courses/courses/cscb58w19/wangda63/Assignment/db/altsyncram_c3g1.tdf Line: 34
-Info (12128): Elaborating entity "altsyncram_c3g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated" File: /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_63g1.tdf
+    Info (12023): Found entity 1: altsyncram_63g1 File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/altsyncram_63g1.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_63g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated" File: /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lsa.tdf
-    Info (12023): Found entity 1: decode_lsa File: /courses/courses/cscb58w19/wangda63/Assignment/db/decode_lsa.tdf Line: 23
-Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|decode_lsa:decode2" File: /courses/courses/cscb58w19/wangda63/Assignment/db/altsyncram_c3g1.tdf Line: 47
+    Info (12023): Found entity 1: decode_lsa File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/decode_lsa.tdf Line: 23
+Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|decode_lsa:decode2" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/altsyncram_63g1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_e8a.tdf
-    Info (12023): Found entity 1: decode_e8a File: /courses/courses/cscb58w19/wangda63/Assignment/db/decode_e8a.tdf Line: 23
-Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|decode_e8a:rden_decode_b" File: /courses/courses/cscb58w19/wangda63/Assignment/db/altsyncram_c3g1.tdf Line: 48
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_job.tdf
-    Info (12023): Found entity 1: mux_job File: /courses/courses/cscb58w19/wangda63/Assignment/db/mux_job.tdf Line: 23
-Info (12128): Elaborating entity "mux_job" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_c3g1:auto_generated|mux_job:mux3" File: /courses/courses/cscb58w19/wangda63/Assignment/db/altsyncram_c3g1.tdf Line: 50
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_pll.v Line: 53
+    Info (12023): Found entity 1: decode_e8a File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/decode_e8a.tdf Line: 23
+Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|decode_e8a:rden_decode_b" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/altsyncram_63g1.tdf Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_gob.tdf
+    Info (12023): Found entity 1: mux_gob File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/mux_gob.tdf Line: 23
+Info (12128): Elaborating entity "mux_gob" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_63g1:auto_generated|mux_gob:mux3" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/db/altsyncram_63g1.tdf Line: 50
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1208,116 +1270,162 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /courses/courses/cscb58w19/wangda63/Assignment/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "balloon_sprite_control" for hierarchy "balloon_sprite_control:player" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 161
-Warning (10240): Verilog HDL Always Construct warning at balloon_sprite_control.v(315): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Warning (10240): Verilog HDL Always Construct warning at balloon_sprite_control.v(315): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Warning (10030): Net "sprite.data_a" at balloon_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 18
-Warning (10030): Net "sprite.waddr_a" at balloon_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 18
-Warning (10030): Net "sprite.we_a" at balloon_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 18
-Info (10041): Inferred latch for "posx[0]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[1]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[2]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[3]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[4]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[5]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[6]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posx[7]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[0]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[1]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[2]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[3]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[4]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[5]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (10041): Inferred latch for "posy[6]" at balloon_sprite_control.v(315) File: /courses/courses/cscb58w19/wangda63/Assignment/balloon_sprite_control.v Line: 315
-Info (12128): Elaborating entity "missile_r_sprite_control" for hierarchy "missile_r_sprite_control:m1" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 176
-Warning (10240): Verilog HDL Always Construct warning at missile_r_sprite_control.v(123): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Warning (10240): Verilog HDL Always Construct warning at missile_r_sprite_control.v(123): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Warning (10030): Net "sprite.data_a" at missile_r_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 18
-Warning (10030): Net "sprite.waddr_a" at missile_r_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 18
-Warning (10030): Net "sprite.we_a" at missile_r_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 18
-Info (10041): Inferred latch for "posx[0]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[1]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[2]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[3]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[4]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[5]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[6]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[7]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[0]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[1]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[2]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[3]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[4]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[5]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[6]" at missile_r_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_r_sprite_control.v Line: 123
-Info (12128): Elaborating entity "missile_l_sprite_control" for hierarchy "missile_l_sprite_control:m2" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 191
-Warning (10240): Verilog HDL Always Construct warning at missile_l_sprite_control.v(123): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Warning (10240): Verilog HDL Always Construct warning at missile_l_sprite_control.v(123): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Warning (10030): Net "sprite.data_a" at missile_l_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 18
-Warning (10030): Net "sprite.waddr_a" at missile_l_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 18
-Warning (10030): Net "sprite.we_a" at missile_l_sprite_control.v(18) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 18
-Info (10041): Inferred latch for "posx[0]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[1]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[2]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[3]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[4]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[5]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[6]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posx[7]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[0]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[1]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[2]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[3]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[4]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[5]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (10041): Inferred latch for "posy[6]" at missile_l_sprite_control.v(123) File: /courses/courses/cscb58w19/wangda63/Assignment/missile_l_sprite_control.v Line: 123
-Info (12128): Elaborating entity "game_over_sprite_control" for hierarchy "game_over_sprite_control:go_screen" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 204
-Warning (10030): Net "sprite.data_a" at game_over_sprite_control.v(16) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/game_over_sprite_control.v Line: 16
-Warning (10030): Net "sprite.waddr_a" at game_over_sprite_control.v(16) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/game_over_sprite_control.v Line: 16
-Warning (10030): Net "sprite.we_a" at game_over_sprite_control.v(16) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/Assignment/game_over_sprite_control.v Line: 16
-Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:h0" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 210
-Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/vga_adapter/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "balloon_sprite_control" for hierarchy "balloon_sprite_control:player" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 194
+Warning (10240): Verilog HDL Always Construct warning at balloon_sprite_control.v(323): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Warning (10240): Verilog HDL Always Construct warning at balloon_sprite_control.v(323): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Warning (10030): Net "sprite.data_a" at balloon_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 21
+Warning (10030): Net "sprite.waddr_a" at balloon_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 21
+Warning (10030): Net "sprite.we_a" at balloon_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 21
+Info (10041): Inferred latch for "posx[0]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[1]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[2]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[3]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[4]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[5]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[6]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[7]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[0]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[1]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[2]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[3]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[4]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[5]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[6]" at balloon_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_sprite_control.v Line: 323
+Info (12128): Elaborating entity "balloon_i_sprite_control" for hierarchy "balloon_i_sprite_control:d_player" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 212
+Warning (10240): Verilog HDL Always Construct warning at balloon_i_sprite_control.v(323): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Warning (10240): Verilog HDL Always Construct warning at balloon_i_sprite_control.v(323): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Warning (10030): Net "sprite.data_a" at balloon_i_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 21
+Warning (10030): Net "sprite.waddr_a" at balloon_i_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 21
+Warning (10030): Net "sprite.we_a" at balloon_i_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 21
+Info (10041): Inferred latch for "posx[0]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[1]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[2]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[3]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[4]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[5]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[6]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posx[7]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[0]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[1]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[2]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[3]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[4]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[5]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (10041): Inferred latch for "posy[6]" at balloon_i_sprite_control.v(323) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/balloon_i_sprite_control.v Line: 323
+Info (12128): Elaborating entity "missile_r_sprite_control" for hierarchy "missile_r_sprite_control:m1" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 230
+Warning (10240): Verilog HDL Always Construct warning at missile_r_sprite_control.v(131): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Warning (10240): Verilog HDL Always Construct warning at missile_r_sprite_control.v(131): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Warning (10030): Net "sprite.data_a" at missile_r_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 21
+Warning (10030): Net "sprite.waddr_a" at missile_r_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 21
+Warning (10030): Net "sprite.we_a" at missile_r_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 21
+Info (10041): Inferred latch for "posx[0]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[1]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[2]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[3]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[4]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[5]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[6]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[7]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[0]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[1]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[2]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[3]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[4]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[5]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[6]" at missile_r_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 131
+Info (12128): Elaborating entity "missile_l_sprite_control" for hierarchy "missile_l_sprite_control:m2" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 248
+Warning (10240): Verilog HDL Always Construct warning at missile_l_sprite_control.v(131): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Warning (10240): Verilog HDL Always Construct warning at missile_l_sprite_control.v(131): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Warning (10030): Net "sprite.data_a" at missile_l_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 21
+Warning (10030): Net "sprite.waddr_a" at missile_l_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 21
+Warning (10030): Net "sprite.we_a" at missile_l_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 21
+Info (10041): Inferred latch for "posx[0]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[1]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[2]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[3]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[4]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[5]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[6]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posx[7]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[0]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[1]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[2]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[3]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[4]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[5]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (10041): Inferred latch for "posy[6]" at missile_l_sprite_control.v(131) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 131
+Info (12128): Elaborating entity "start_sprite_control" for hierarchy "start_sprite_control:s" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 266
+Warning (10240): Verilog HDL Always Construct warning at start_sprite_control.v(83): inferring latch(es) for variable "posy", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Warning (10240): Verilog HDL Always Construct warning at start_sprite_control.v(83): inferring latch(es) for variable "posx", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Warning (10030): Net "sprite.data_a" at start_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 21
+Warning (10030): Net "sprite.waddr_a" at start_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 21
+Warning (10030): Net "sprite.we_a" at start_sprite_control.v(21) has no driver or initial value, using a default initial value '0' File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 21
+Info (10041): Inferred latch for "posx[0]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[1]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[2]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[3]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[4]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[5]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[6]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posx[7]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[0]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[1]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[2]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[3]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[4]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[5]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (10041): Inferred latch for "posy[6]" at start_sprite_control.v(83) File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 83
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:h0" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 272
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276004): RAM logic "start_sprite_control:s|sprite" is uninferred due to inappropriate RAM size File: /courses/courses/cscb58w19/wangda63/FinalAssignment/start_sprite_control.v Line: 21
+    Info (276004): RAM logic "missile_l_sprite_control:m2|sprite" is uninferred due to inappropriate RAM size File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_l_sprite_control.v Line: 21
+    Info (276004): RAM logic "missile_r_sprite_control:m1|sprite" is uninferred due to inappropriate RAM size File: /courses/courses/cscb58w19/wangda63/FinalAssignment/missile_r_sprite_control.v Line: 21
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 8
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 8
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 8
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 10
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 10
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 10
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 16
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 17
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 17
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 18
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 18
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 20
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 20
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 8
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 8
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 8
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 9
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 9
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 9
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 10
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 10
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 10
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 16
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 17
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 17
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 18
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 18
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 20
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 20
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file /courses/courses/cscb58w19/wangda63/Assignment/output_files/project.map.smsg
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /courses/courses/cscb58w19/wangda63/FinalAssignment/output_files/project.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 2
-    Warning (15610): No output dependent on input pin "SW[3]" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 2
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 3
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /courses/courses/cscb58w19/wangda63/Assignment/sprite_translator.v Line: 3
-Info (21057): Implemented 1031 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 2
+    Warning (15610): No output dependent on input pin "SW[1]" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 2
+    Warning (15610): No output dependent on input pin "SW[3]" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 2
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /courses/courses/cscb58w19/wangda63/FinalAssignment/sprite_translator.v Line: 3
+Info (21057): Implemented 1355 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 77 output pins
-    Info (21061): Implemented 871 logic cells
-    Info (21064): Implemented 72 RAM segments
+    Info (21061): Implemented 1231 logic cells
+    Info (21064): Implemented 36 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 1268 megabytes
-    Info: Processing ended: Fri Mar 29 17:12:01 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 1266 megabytes
+    Info: Processing ended: Fri Mar 29 19:59:49 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /courses/courses/cscb58w19/wangda63/Assignment/output_files/project.map.smsg.
+The suppressed messages can be found in /courses/courses/cscb58w19/wangda63/FinalAssignment/output_files/project.map.smsg.
 
 

@@ -21,11 +21,18 @@ module project(
 	
 	reg blow_toggle;
 	reg blow;
+	
+	initial begin
+		blow_toggle = ~KEY[2];
+		blow <= 1'b0;
+	end
 
 	always@(*)
 	begin
 		if (~GPIO[0])
 			blow <= 1'b1;
+		if(CLOCK_50 && GPIO[0])
+			blow <= 1'b0;
 	end
 
 	always@(posedge CLOCK_50)
@@ -34,7 +41,6 @@ module project(
 			blow_toggle = blow;
 		else
 			blow_toggle = ~KEY[2];
-		blow = 1'b0;
 	end
 	
 	reg [11:0] colour;
@@ -120,11 +126,13 @@ module project(
 		.reset(KEY[0]),
 		.blow(blow_toggle),
 		.load(load),
-		.continueDraw(SW[1]),
+		.load_x(load_x),
+		.load_y(load_y),
+		.continueDraw(1'b1),
 		.complete_player(complete_player),
 		.complete_m1(complete_m1),
 		.complete_m2(complete_m2),
-		.complete_go(complete_go),
+		.complete_start(complete_start),
 		.player_x(posx_player),
 		.player_y(posy_player),
 		.m1_x(posx_m1),
@@ -134,17 +142,19 @@ module project(
 		.draw_player(draw_player),
 		.draw_m1(draw_m1),
 		.draw_m2(draw_m2),
+		.draw_d_player(draw_d_player),
+		.draw_start(draw_start),
 		.clear(clear_sig),
 		.shift_h(shift_h_sig),
 		.shift_v(shift_v_sig),
 		.shift_amount(shift_amount),
 		.writeEn(writeEn),
-		.state(curState),
+		.state(curState)
 	);
 
 	// --------------- VGA Module --------------- 
 	vga_adapter VGA(
-		.resetn(KEY[0]),
+		.resetn(1'b1),
 		.clock(CLOCK_50),
 		.colour(colour),
 		.x(x_out),
@@ -257,12 +267,12 @@ module project(
 	
 	// --------------- HEX Modules (for debugging) --------------- 
 	hex_display h0(
-		.IN(x_out_m1[3:0]),
+		.IN(load_x[3:0]),
 		.OUT(HEX0)
 		);
 		
 	hex_display h1(
-		.IN(x_out_m1[7:4]),
+		.IN(load_x[7:4]),
 		.OUT(HEX1)
 		);
 		
@@ -277,7 +287,7 @@ module project(
 		);
 		
 	hex_display h4(
-		.IN(x_out_m2[3:0]),
+		.IN(blow_toggle),
 		.OUT(HEX4)
 		);
 		

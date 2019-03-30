@@ -4,8 +4,8 @@
     input reset, 
 	input blow,
 	output reg load,
-    output reg load_x,
-    output reg load_y,
+    output reg [7:0] load_x,
+    output reg [6:0] load_y,
     input continueDraw, 
     input complete_player,
     input complete_m1,
@@ -32,10 +32,9 @@
     
     reg [4:0] curState, nextState;
 	reg [6:0] velocity;
-    wire hit;
 
-    localparam  start = 5'b10110;
-                eStart = 5'b11011;
+    localparam  start = 5'b10110,
+                eStart = 5'b11011,
                 ePlayer = 5'b00000, 
                 dPlayer = 5'b00001, 
                 eM1 = 5'b00010, 
@@ -43,45 +42,46 @@
                 eM2 = 5'b00100, 
                 dM2 = 5'b00101, 
                 detectHits = 5'b01110, 
-                load_dead = 5'b11100;
-                dead = 5'b11110;
-                load_player = 5'b00110;
-                load_m1 = 5'b11000;
-                load_m2 = 5'b10101;
+                load_dead = 5'b11100,
+                dead = 5'b11110,
+                load_player = 5'b00110,
+                load_m1 = 5'b11000,
+                load_m2 = 5'b10101,
                 gameOver = 5'b01111, 
                 idle = 5'b10010;
     
 	assign state = curState;
 
-    reg resetting;
+   reg resetting;
 
 	initial begin
-	    curState <= idle;
+	    curState <= load_player;
 		velocity <= 1'b0;
-        resetting <= 1'b0;
+        resetting <= 1'b1;
 	end
 
     always@(*) 
     begin: state_table
         case(curState)
             start: begin
-                if(blow)
+                if(blow == 1'b1)
                     nextState <= eStart;
                 else
                     nextState <= start;
-
+					end
             eStart: begin
                 if(complete_start == 1'b1)
                     nextState <= ePlayer;
                 else
                     nextState <= eStart;
-
+					end
             ePlayer: begin
-                if(complete_player == 1'b1)
+                if(complete_player == 1'b1) begin
                     if (resetting == 1'b1)
                         nextState <= eM1;
                     else
                         nextState <= dPlayer;
+							end
                 else
                     nextState <= ePlayer;
             end
@@ -94,11 +94,12 @@
             end
 
             eM1: begin
-                if(complete_m1 == 1'b1)
+                if(complete_m1 == 1'b1) begin 
                     if (resetting == 1'b1)
                         nextState <= eM2;
                     else
                         nextState <= dM1;
+						end
                 else
                     nextState <= eM1;
             end
@@ -112,9 +113,9 @@
 				
 			eM2: begin
                 if(complete_m2 == 1'b1)
-                    if (resetting == 1'b1)
+                    if (resetting == 1'b1) begin
                         nextState <= load_player;
-                        resetting <= 1'b0;
+							end
                     else
                         nextState <= dM2;
                 else
@@ -139,15 +140,15 @@
                     nextState <= idle;
             end
             
-            load_dead: nextState <= dead;
+            load_dead: begin nextState <= dead; end
 
-            dead: nextState <= dead;
+            dead: begin nextState <= dead; end
 
-            load_player: nextState <= load_m1;
+            load_player: begin nextState <= load_m1; end
 
-            load_m1: nextState <= load_m2;
+            load_m1: begin nextState <= load_m2; end
 
-            load_m2: nextState <= start;
+            load_m2: begin nextState <= start; end
 				
             idle: begin
                 if(continueDraw == 1'b1 && update == 1'b1)
@@ -156,7 +157,7 @@
                     nextState <= idle;
             end
 
-            default: nextState <= idle;
+            default: nextState <= load_player;
 		endcase
     end
 
@@ -278,18 +279,20 @@
             clear <= 1'b0;
             shift_h <= 1'b0;
             shift_v <= 1'b0;
+			end
 
         dead: begin
             draw_m1 <= 1'b0;
             draw_m2 <= 1'b0;
             draw_player <= 1'b0;
             draw_d_player <= 1'b1;
+				draw_start <= 1'b0;
             load <= 1'b0;
             writeEn <= 1'b1;
             clear <= 1'b0;
             shift_h <= 1'b1;
             shift_v <= 1'b0;
-
+			end
         load_player: begin
             draw_m1 <= 1'b0;
             draw_m2 <= 1'b0;
@@ -301,7 +304,7 @@
             clear <= 1'b0;
             shift_h <= 1'b0;
             shift_v <= 1'b0;
-
+			end
         load_m1: begin
             draw_m1 <= 1'b1;
             draw_m2 <= 1'b0;
@@ -313,7 +316,7 @@
             clear <= 1'b0;
             shift_h <= 1'b0;
             shift_v <= 1'b0;
-
+			end
         load_m2: begin
             draw_m1 <= 1'b0;
             draw_m2 <= 1'b1;
@@ -325,7 +328,7 @@
             clear <= 1'b0;
             shift_h <= 1'b0;
             shift_v <= 1'b0;
-
+			end
         idle: begin
             draw_m1 <= 1'b0;
             draw_m2 <= 1'b0;
@@ -357,30 +360,32 @@
     always@(posedge clock)
         begin: state_FFs
             if(reset == 1'b0)
+				begin
                 resetting = 1'b1;
                 curState = ePlayer;
+				end
             else
                 curState = nextState;
 
                 if (curState == load_dead) begin
-                    load_x <= player_x;
-                    load_y <= player_y;
+                    load_x = player_x;
+                    load_y = player_y;
                 end
                 else if (curState == load_player) begin
-                    load_x <= 8'd72;
-                    load_y <= 7'd52;
+                    load_x = 8'd72;
+                    load_y = 7'd52;
                 end
                 else if (curState == load_m1) begin
-                    load_x <= 8'b0;
-                    load_y <= 7'd20;
+                    load_x = 8'b0;
+                    load_y = 7'd20;
                 end
                 else if (curState == load_m2) begin
-                    load_x <= 8'd180;
-                    load_y <= 7'd100;
+                    load_x = 8'd180;
+                    load_y = 7'd100;
                 end
                 else begin
-                    load_x <= 1'b0;
-                    load_y <= 1'b0;
+                    load_x = 1'b0;
+                    load_y = 1'b0;
                 end
 
 
@@ -389,13 +394,16 @@
                 else if (curState == dM2)
                     shift_amount = 1'b1;
                 else if (curState == dPlayer) begin
-                    if (blow)
+                    if (blow == 1'b1)
                         shift_amount = -1'b1;
                     else
                         shift_amount = 1'b1;
                 end
                 else
                     shift_amount = 1'b0;
+						  
+					if (curState == start)
+						resetting <= 1'b0;
 
         end
  endmodule
