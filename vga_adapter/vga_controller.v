@@ -176,7 +176,7 @@ module vga_controller(	vga_clock, resetn, pixel_colour, memory_address,
 		begin
 			for (index = 0; index < 4; index = index + 1)
 			begin
-				VGA_R[index] <= pixel_color[index + 8];
+				VGA_R[index] <= pixel_colour[index + 8];
 				VGA_G[index] <= pixel_colour[index + 4];
 				VGA_B[index] <= pixel_colour[index];
 			end
@@ -186,7 +186,6 @@ module vga_controller(	vga_clock, resetn, pixel_colour, memory_address,
 				VGA_G[index] <= 0;
 				VGA_B[index] <= 0;
 			end
-		end
 			// for (index = 10-BITS_PER_COLOUR_CHANNEL; index >= 0; index = index - BITS_PER_COLOUR_CHANNEL)
 			// begin
 			// 	for (sub_index = BITS_PER_COLOUR_CHANNEL - 1; sub_index >= 0; sub_index = sub_index - 1)
