@@ -1,5 +1,5 @@
 module project(
-	input [3:0] SW,
+	input [17:0] SW,
 	input [3:0] KEY,
 	input [0:0] GPIO,
 	output [6:0] HEX0,
@@ -23,7 +23,7 @@ module project(
 	reg blow;
 	
 	initial begin
-		blow_toggle = ~KEY[2];
+		blow_toggle = 1'b0;
 		blow <= 1'b0;
 	end
 
@@ -37,7 +37,7 @@ module project(
 
 	always@(posedge CLOCK_50)
 	begin
-		if (SW[2] == 0)
+		if (SW[0] == 0)
 			blow_toggle = blow;
 		else
 			blow_toggle = ~KEY[2];
@@ -77,6 +77,7 @@ module project(
 	
 	wire [4:0] curState;
 	wire frame;
+	wire [1:0] randval;
 	
 	wire [7:0] posx_player, posx_m1, posx_m2, posx_d_player, posx_start;
 	wire [6:0] posy_player, posy_m1, posy_m2, posy_d_player, posy_start;
@@ -120,6 +121,13 @@ module project(
 		.Enable(frame)
 	);
 
+	lfsr linearFeedbackShiftRegister(
+		.clock(CLOCK_50),
+		.seed(SW[17:2]),
+		.reset(KEY[0]),
+		.randnum(randval)
+	)
+
 	fsm FSM(
 		.clock(CLOCK_50),
 		.update(frame),
@@ -128,6 +136,7 @@ module project(
 		.load(load),
 		.load_x(load_x),
 		.load_y(load_y),
+		.randval(randval),
 		.continueDraw(1'b1),
 		.complete_player(complete_player),
 		.complete_m1(complete_m1),

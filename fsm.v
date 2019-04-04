@@ -6,6 +6,7 @@
 	output reg load,
     output reg [7:0] load_x,
     output reg [6:0] load_y,
+    input [1:0] randval,
     input continueDraw, 
     input complete_player,
     input complete_m1,
@@ -31,7 +32,7 @@
     );
     
     reg [4:0] curState, nextState;
-	reg [6:0] velocity;
+	reg [1:0] velocity_m1, velocity_m2;
 
     localparam  start = 5'b10110,
                 eStart = 5'b11011,
@@ -56,7 +57,8 @@
 
 	initial begin
 	    curState <= load_player;
-		velocity <= 1'b0;
+        velocity_m1 <= 1'b1;
+        velocity_m2 <= 1'b1;
         resetting <= 1'b1;
 	end
 
@@ -389,10 +391,26 @@
                 end
 
 
-                if (curState == dM1)
-                    shift_amount = 1'b1;
+                if (curState == dM1) begin
+                    if (m1_x <= 2'b10) begin
+                        case(randval)
+                            2'b00: velocity_m1 = 2'b01;
+                            2'b01: velocity_m1 = 2'b01;
+                            2'b10: velocity_m1 = 2'b10;
+                            2'b11: velocity_m1 = 2'b11;
+                        endcase
+                    end
+                    shift_amount = velocity_m1;
                 else if (curState == dM2)
-                    shift_amount = 1'b1;
+                    if (m2_x >= 8'd178) begin
+                        case(randval)
+                            2'b00: velocity_m2 = 2'b01;
+                            2'b01: velocity_m2 = 2'b01;
+                            2'b10: velocity_m2 = 2'b10;
+                            2'b11: velocity_m2 = 2'b11;
+                        endcase
+                    end
+                    shift_amount = velocity_m2;
                 else if (curState == dPlayer) begin
                     if (blow == 1'b1)
                         shift_amount = -1'b1;
@@ -401,7 +419,6 @@
                 end
                 else
                     shift_amount = 1'b0;
-						  
 					if (curState == start)
 						resetting <= 1'b0;
 
