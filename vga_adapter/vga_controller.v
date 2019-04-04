@@ -13,7 +13,7 @@ module vga_controller(	vga_clock, resetn, pixel_colour, memory_address,
 	
 	/* Screen resolution and colour depth parameters. */
 	
-	parameter BITS_PER_COLOUR_CHANNEL = 4;
+	parameter BITS_PER_COLOUR_CHANNEL = 1;
 	/* The number of bits per colour channel used to represent the colour of each pixel. A value
 	 * of 1 means that Red, Green and Blue colour channels will use 1 bit each to represent the intensity
 	 * of the respective colour channel. For BITS_PER_COLOUR_CHANNEL=1, the adapter can display 8 colours.
@@ -174,15 +174,28 @@ module vga_controller(	vga_clock, resetn, pixel_colour, memory_address,
 		VGA_B <= 'b0;
 		if (MONOCHROME == "FALSE")
 		begin
-			for (index = 10-BITS_PER_COLOUR_CHANNEL; index >= 0; index = index - BITS_PER_COLOUR_CHANNEL)
+			for (index = 0; index < 4; index = index + 1)
 			begin
-				for (sub_index = BITS_PER_COLOUR_CHANNEL - 1; sub_index >= 0; sub_index = sub_index - 1)
-				begin
-					VGA_R[sub_index+index] <= pixel_colour[sub_index + BITS_PER_COLOUR_CHANNEL*2];
-					VGA_G[sub_index+index] <= pixel_colour[sub_index + BITS_PER_COLOUR_CHANNEL];
-					VGA_B[sub_index+index] <= pixel_colour[sub_index];
-				end
-			end	
+				VGA_R[index] <= pixel_color[index + 8];
+				VGA_G[index] <= pixel_colour[index + 4];
+				VGA_B[index] <= pixel_colour[index];
+			end
+			for (index = 4; index < 10; index = index + 1)
+			begin
+				VGA_R[index] <= 0;
+				VGA_G[index] <= 0;
+				VGA_B[index] <= 0;
+			end
+		end
+			// for (index = 10-BITS_PER_COLOUR_CHANNEL; index >= 0; index = index - BITS_PER_COLOUR_CHANNEL)
+			// begin
+			// 	for (sub_index = BITS_PER_COLOUR_CHANNEL - 1; sub_index >= 0; sub_index = sub_index - 1)
+			// 	begin
+			// 		VGA_R[sub_index+index] <= pixel_colour[sub_index + BITS_PER_COLOUR_CHANNEL*2];
+			// 		VGA_G[sub_index+index] <= pixel_colour[sub_index + BITS_PER_COLOUR_CHANNEL];
+			// 		VGA_B[sub_index+index] <= pixel_colour[sub_index];
+			// 	end
+			// end	
 		end
 		else
 		begin
