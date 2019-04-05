@@ -7,7 +7,8 @@
     output reg [7:0] load_x,
     output reg [6:0] load_y,
     input [1:0] randval,
-    input continueDraw, 
+    input continueDraw,
+	 input experiment,
     input complete_player,
     input complete_m1,
     input complete_m2,
@@ -26,13 +27,15 @@
     output reg shift_h, 
     output reg shift_v, 
     output reg clear, 
-    output reg [6:0] shift_amount, 
+    output reg [6:0] shift_amount,
+	output reg [6:0] shift_amount_two,  
     output reg writeEn, 
     output [4:0] state
     );
     
     reg [4:0] curState, nextState;
 	reg [1:0] velocity_m1, velocity_m2;
+	reg signed [1:0] v_velocity_m1, v_velocity_m2;
 
     localparam  start = 5'b10110,
                 eStart = 5'b11011,
@@ -59,6 +62,8 @@
 	    curState <= load_player;
         velocity_m1 <= 1'b1;
         velocity_m2 <= 1'b1;
+		  v_velocity_m1 <= 1'b0;
+			v_velocity_m2 <= 1'b0;
         resetting <= 1'b1;
 	end
 
@@ -389,28 +394,63 @@
                     load_x = 1'b0;
                     load_y = 1'b0;
                 end
+					 
+					 if (curState == dM1) begin
+                    if (m1_x <= 1'b0) begin
+								if (experiment) begin
+									case(randval)
+										 2'b00: v_velocity_m1 = -2'b01;
+										 2'b01: v_velocity_m1 = 2'b01;
+										 2'b10: v_velocity_m1 = 2'b00;
+										 2'b11: v_velocity_m1 = 2'b00;
+									endcase
+								end
+								else
+									v_velocity_m1 = 2'b00;
+                    end
+                    shift_amount_two = v_velocity_m1;
+					end
+                else if (curState == dM2) begin
+                    if (m2_x >= 8'd180) begin
+								if (experiment) begin
+									case(randval)
+										 2'b00: v_velocity_m2 = -2'b01;
+										 2'b01: v_velocity_m2 = 2'b01;
+										 2'b10: v_velocity_m2 = 2'b00;
+										 2'b11: v_velocity_m2 = 2'b00;
+									endcase
+								end
+								else
+									v_velocity_m2 = 2'b00;
+                    end
+                    shift_amount_two = v_velocity_m2;
+					end
+                else
+							shift_amount_two = 1'b0;
 
 
                 if (curState == dM1) begin
-                    if (m1_x <= 2'b10) begin
+                    if (m1_x <= 1'b0) begin
                         case(randval)
                             2'b00: velocity_m1 = 2'b01;
                             2'b01: velocity_m1 = 2'b01;
                             2'b10: velocity_m1 = 2'b10;
-                            2'b11: velocity_m1 = 2'b11;
+                            2'b11: velocity_m1 = 2'b10;
                         endcase
                     end
                     shift_amount = velocity_m1;
-                else if (curState == dM2)
-                    if (m2_x >= 8'd178) begin
+						end
+                else if (curState == dM2) begin
+                    if (m2_x >= 8'd180) begin
                         case(randval)
                             2'b00: velocity_m2 = 2'b01;
                             2'b01: velocity_m2 = 2'b01;
                             2'b10: velocity_m2 = 2'b10;
-                            2'b11: velocity_m2 = 2'b11;
+                            2'b11: velocity_m2 = 2'b10;
                         endcase
                     end
                     shift_amount = velocity_m2;
+						end
                 else if (curState == dPlayer) begin
                     if (blow == 1'b1)
                         shift_amount = -1'b1;

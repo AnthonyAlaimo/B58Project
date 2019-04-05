@@ -31,11 +31,11 @@ module project(
 	begin
 		if (~GPIO[0])
 			blow <= 1'b1;
-		if(CLOCK_50 && GPIO[0])
+		if(frame && GPIO[0])
 			blow <= 1'b0;
 	end
 
-	always@(posedge CLOCK_50)
+	always@(posedge frame)
 	begin
 		if (SW[0] == 0)
 			blow_toggle = blow;
@@ -69,6 +69,7 @@ module project(
 	
 	wire writeEn, clear_sig, shift_h_sig, shift_v_sig, load;
 	wire [6:0] shift_amount;
+	wire [6:0] shift_amount_two;
 	wire [7:0] load_x;
 	wire [6:0] load_y;
 	wire complete_player, complete_m1, complete_m2, complete_d_player, complete_start;
@@ -108,11 +109,17 @@ module project(
 				y_out <= y_out_d_player;
 				colour <= colour_d_player;
 			end
-		else
+		else if (curState == 5'b10110 || curState == 5'b11011)
 			begin
 				x_out <= x_out_start;
 				y_out <= y_out_start;
 				colour <= colour_start;
+			end
+		else
+			begin
+				x_out <= 0;
+				y_out <= 0;
+				colour <= 0;
 			end
 	end
 
@@ -121,12 +128,12 @@ module project(
 		.Enable(frame)
 	);
 
-	lfsr linearFeedbackShiftRegister(
+	linearFeedbackShiftRegister lfsr(
 		.clock(CLOCK_50),
 		.seed(SW[17:2]),
 		.reset(KEY[0]),
 		.randnum(randval)
-	)
+	);
 
 	fsm FSM(
 		.clock(CLOCK_50),
@@ -138,6 +145,7 @@ module project(
 		.load_y(load_y),
 		.randval(randval),
 		.continueDraw(1'b1),
+		.experiment(SW[1]),
 		.complete_player(complete_player),
 		.complete_m1(complete_m1),
 		.complete_m2(complete_m2),
@@ -157,6 +165,7 @@ module project(
 		.shift_h(shift_h_sig),
 		.shift_v(shift_v_sig),
 		.shift_amount(shift_amount),
+		.shift_amount_two(shift_amount_two),
 		.writeEn(writeEn),
 		.state(curState)
 	);
@@ -224,9 +233,10 @@ module project(
 		.clk(CLOCK_50),
 		.draw(draw_m1),
 		.clear(clear_sig),
-		.shift_h(shift_h_sig),
+		.shift_hv(shift_h_sig),
 		.shift_v(shift_v_sig),
 		.shift_amount(shift_amount),
+		.shift_amount_two(shift_amount_two),
 		.load(load),
 		.complete(complete_m1),
 		.load_x(load_x),
@@ -242,9 +252,10 @@ module project(
 		.clk(CLOCK_50),
 		.draw(draw_m2),
 		.clear(clear_sig),
-		.shift_h(shift_h_sig),
+		.shift_hv(shift_h_sig),
 		.shift_v(shift_v_sig),
 		.shift_amount(shift_amount),
+		.shift_amount_two(shift_amount_two),
 		.load(load),
 		.complete(complete_m2),
 		.load_x(load_x),
@@ -276,7 +287,7 @@ module project(
 	
 	// --------------- HEX Modules (for debugging) --------------- 
 	hex_display h0(
-		.IN(load_x[3:0]),
+		.IN(randval),
 		.OUT(HEX0)
 		);
 		

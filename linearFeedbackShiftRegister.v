@@ -24,7 +24,7 @@ module linearFeedbackShiftRegister(
 
     always@(posedge clock)
     begin
-        if (reset) begin
+        if (!reset) begin
             shift_reg[0] <= seed[8] ^ seed[0];
             shift_reg[1] <= seed[9] ^ seed[1];
             shift_reg[2] <= seed[10] ^ seed[2];
@@ -37,3 +37,4 @@ module linearFeedbackShiftRegister(
         else
             shift_reg <= {shift_reg[6:0], linear_feedback};
     end
+endmodule

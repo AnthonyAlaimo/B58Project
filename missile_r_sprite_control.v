@@ -2,10 +2,11 @@ module missile_r_sprite_control(
 	input clk,
 	input draw,
     input clear,
-    input shift_h,
+    input shift_hv,
     input shift_v,
     input load,
     input [6:0] shift_amount,
+	 input [6:0] shift_amount_two,
     input [7:0] load_x,
     input [6:0] load_y,
     output reg complete,
@@ -101,14 +102,16 @@ module missile_r_sprite_control(
 						 colour_out = 1'b0;
 						 pointer = pointer + 1'b1;
 					end
-			  else if (shift_h)
+			  else if (shift_hv)
 					begin
 						 x_out = x_pos + shift_amount + pointer[3:0];
-						 y_out = y_pos + pointer[5:4];
+						 y_out = y_pos + shift_amount_two + pointer[5:4];
 						 colour_out = sprite[pointer];
 						 pointer = pointer + 1'b1;
-						 if (pointer == 1'b0)
+						 if (pointer == 1'b0) begin
 							  x_pos = x_pos + shift_amount;
+                       y_pos = y_pos + shift_amount_two;
+						end
 					end
 			  else if (shift_v)
 					begin

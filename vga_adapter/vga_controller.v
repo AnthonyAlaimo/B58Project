@@ -174,13 +174,19 @@ module vga_controller(	vga_clock, resetn, pixel_colour, memory_address,
 		VGA_B <= 'b0;
 		if (MONOCHROME == "FALSE")
 		begin
-			for (index = 0; index < 4; index = index + 1)
+			for (index = 0; index < 3; index = index + 1)
 			begin
-				VGA_R[index] <= pixel_colour[index + 8];
-				VGA_G[index] <= pixel_colour[index + 4];
-				VGA_B[index] <= pixel_colour[index];
+				VGA_R[index] <= 0;
+				VGA_G[index] <= 0;
+				VGA_B[index] <= 0;
 			end
-			for (index = 4; index < 10; index = index + 1)
+			for (index = 3; index < 7; index = index + 1)
+			begin
+				VGA_R[index] <= pixel_colour[index + 8 - 3];
+				VGA_G[index] <= pixel_colour[index + 4 - 3];
+				VGA_B[index] <= pixel_colour[index - 3];
+			end
+			for (index = 7; index < 10; index = index + 1)
 			begin
 				VGA_R[index] <= 0;
 				VGA_G[index] <= 0;

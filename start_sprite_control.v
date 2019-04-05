@@ -24,9 +24,9 @@ module start_sprite_control(
     initial begin
         x_pos = 8'd49;
         y_pos = 7'd48;
-        pointer = 1'b0;
+        pointer = 1'b1;
 
-        sprite[0] = 12'b100011110000;
+        sprite[0] = 12'b000000000000;
         sprite[1] = 12'b000000000000;
         sprite[2] = 12'b000000000000;
         sprite[3] = 12'b000000000000;
@@ -551,27 +551,28 @@ module start_sprite_control(
 					end
 			  else if (shift_h)
 					begin
-						 x_out = x_pos + shift_amount + pointer[5:0];
+						 // x_out = x_pos + shift_amount + pointer[5:0];
+						 x_out = x_pos + pointer[5:0];
 						 y_out = y_pos + pointer[8:6];
 						 colour_out = sprite[pointer];
 						 pointer = pointer + 1'b1;
-						 if (pointer == 1'b0)
-							  x_pos = x_pos + shift_amount;
+//						 if (pointer == 1'b0)
+//							  x_pos = x_pos + shift_amount;
 					end
-			  else if (shift_v)
-					begin
-						 x_out = x_pos + pointer[5:0];
-						 y_out = y_pos + shift_amount + pointer[8:6];
-						 colour_out = sprite[pointer];
-						 pointer = pointer + 1'b1;
-						 if (pointer == 1'b0)
-							  y_pos = y_pos + shift_amount;
-					end
-            else if (load)
-                begin
-                    x_pos = load_x;
-                    y_pos = load_y;
-                end
+//			  else if (shift_v)
+//					begin
+//						 x_out = x_pos + pointer[5:0];
+//						 y_out = y_pos + shift_amount + pointer[8:6];
+//						 colour_out = sprite[pointer];
+//						 pointer = pointer + 1'b1;
+//						 if (pointer == 1'b0)
+//							  y_pos = y_pos + shift_amount;
+//					end
+//            else if (load)
+//                begin
+//                    x_pos = load_x;
+//                    y_pos = load_y;
+//                end
 		end
     end
 
