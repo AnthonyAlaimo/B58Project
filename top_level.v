@@ -1,4 +1,4 @@
-module project(
+module top_level(
 	input [17:0] SW,
 	input [3:0] KEY,
 	input [0:0] GPIO,
